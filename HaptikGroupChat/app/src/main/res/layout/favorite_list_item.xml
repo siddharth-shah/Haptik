@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="favorite"
+            type="co.siddharth.haptikgroupchat.favoritesinfo.FavoriteInfoModel" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                app:imageUrl="@{favorite.imageUrl}" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_toRightOf="@id/profile_image"
+                android:gravity="center_vertical"
+                android:hint="siddharth"
+                android:paddingTop="@dimen/dp6"
+                android:text="@{``+favorite.userName}"
+                android:textColor="@color/text_black"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/username"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_toRightOf="@id/profile_image">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_mail_blue" />
+
+                    <TextView
+                        android:id="@+id/total_conversation_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:layout_marginRight="8.0dip"
+                        android:gravity="center_vertical"
+                        android:hint="23"
+                        android:paddingTop="@dimen/dp6"
+                        android:text="@{``+favorite.totalConversations}"
+                        android:textColor="@color/text_black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_star_blue_24dp" />
+
+                    <TextView
+                        android:id="@+id/favorite_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center_vertical"
+                        android:hint="4"
+                        android:paddingTop="@dimen/dp6"
+                        android:text="@{``+favorite.numOfFavoriteConversations}"
+                        android:textColor="@color/text_black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </FrameLayout>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>
