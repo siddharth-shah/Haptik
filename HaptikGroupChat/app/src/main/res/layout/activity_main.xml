@@ -38,5 +38,20 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+        <FrameLayout
+            android:id="@+id/tutorial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_translucent_blue">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:text="LONG PRESS ON ANY CHAT ITEM TO FAVORITE IT"
+                android:textSize="24sp" />
+        </FrameLayout>
     </android.support.design.widget.CoordinatorLayout>
 </layout>

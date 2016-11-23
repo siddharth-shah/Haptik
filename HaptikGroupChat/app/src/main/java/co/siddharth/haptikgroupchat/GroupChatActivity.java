@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import co.siddharth.haptikgroupchat.chat.GroupChatFragment;
 import co.siddharth.haptikgroupchat.data.GroupChatContainer;
@@ -28,6 +29,12 @@ public class GroupChatActivity extends AppCompatActivity implements GroupChatFra
         android.support.v4.view.PagerAdapter pagerAdapter = new PagerAdapter(fragmentManager);
         binding.chatViewPager.setAdapter(pagerAdapter);
         binding.groupChatTabs.setupWithViewPager(binding.chatViewPager);
+        binding.tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.tutorial.setVisibility(View.GONE);
+            }
+        });
     }
 
     @Override
